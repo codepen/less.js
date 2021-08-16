@@ -78,6 +78,8 @@
           .replace(/\./g, ':'); // Replace dots with colons(for valid id)
   }
   function addDataAttr(options, tag) {
+      if (!tag)
+          return;
       for (var opt in tag.dataset) {
           if (tag.dataset.hasOwnProperty(opt)) {
               if (opt === 'env' || opt === 'dumpLineNumbers' || opt === 'rootpath' || opt === 'errorReporting') {
