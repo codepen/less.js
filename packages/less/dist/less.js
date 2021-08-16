@@ -2,7 +2,7 @@
  * Less - Leaner CSS v3.13.1
  * http://lesscss.org
  * 
- * Copyright (c) 2009-2020, Alexis Sellier <self@cloudhead.net>
+ * Copyright (c) 2009-2021, Alexis Sellier <self@cloudhead.net>
  * Licensed under the Apache-2.0 License.
  *
  * @license Apache-2.0
@@ -6939,7 +6939,7 @@
                       function f(parse, stop) {
                           return {
                               parse: parse,
-                              stop: stop // when true - stop after parse() and return its result, 
+                              stop: stop // when true - stop after parse() and return its result,
                               // otherwise continue for plain args
                           };
                       }
@@ -8203,13 +8203,18 @@
               //     @plugin (args) "lib";
               //
               plugin: function () {
-                  var path;
-                  var args;
-                  var options;
-                  var index = parserInput.i;
-                  var dir = parserInput.$re(/^@plugin?\s+/);
+                  error('@plugin not supported');
+                  return;
+                  /*
+                  let path;
+                  let args;
+                  let options;
+                  const index = parserInput.i;
+                  const dir   = parserInput.$re(/^@plugin?\s+/);
+
                   if (dir) {
                       args = this.pluginArgs();
+
                       if (args) {
                           options = {
                               pluginArgs: args,
@@ -8219,18 +8224,21 @@
                       else {
                           options = { isPlugin: true };
                       }
+
                       if ((path = this.entities.quoted() || this.entities.url())) {
+
                           if (!parserInput.$char(';')) {
                               parserInput.i = index;
                               error('missing semi-colon on @plugin');
                           }
-                          return new (tree.Import)(path, null, options, index, fileInfo);
+                          return new(tree.Import)(path, null, options, index, fileInfo);
                       }
                       else {
                           parserInput.i = index;
                           error('malformed @plugin statement');
                       }
                   }
+                  */
               },
               pluginArgs: function () {
                   // list of options, surrounded by parens
