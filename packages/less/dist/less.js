@@ -8203,16 +8203,15 @@
               //     @plugin (args) "lib";
               //
               plugin: function () {
-                  error('@plugin not supported');
-                  return;
-                  /*
-                  let path;
-                  let args;
-                  let options;
-                  const index = parserInput.i;
-                  const dir   = parserInput.$re(/^@plugin?\s+/);
-
+                  // let path;
+                  // let args;
+                  // let options;
+                  // const index = parserInput.i;
+                  var dir = parserInput.$re(/^@plugin?\s+/);
                   if (dir) {
+                      error('@plugin not supported');
+                      return;
+                      /*
                       args = this.pluginArgs();
 
                       if (args) {
@@ -8237,8 +8236,8 @@
                           parserInput.i = index;
                           error('malformed @plugin statement');
                       }
+                      */
                   }
-                  */
               },
               pluginArgs: function () {
                   // list of options, surrounded by parens

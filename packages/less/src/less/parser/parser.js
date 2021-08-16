@@ -1840,17 +1840,16 @@ const Parser = function Parser(context, imports, fileInfo) {
             //     @plugin (args) "lib";
             //
             plugin: function () {
-
-                error('@plugin not supported');
-                return;
-                /*
-                let path;
-                let args;
-                let options;
-                const index = parserInput.i;
+                // let path;
+                // let args;
+                // let options;
+                // const index = parserInput.i;
                 const dir   = parserInput.$re(/^@plugin?\s+/);
 
                 if (dir) {
+                    error('@plugin not supported');
+                    return;
+                    /*
                     args = this.pluginArgs();
 
                     if (args) {
@@ -1875,8 +1874,8 @@ const Parser = function Parser(context, imports, fileInfo) {
                         parserInput.i = index;
                         error('malformed @plugin statement');
                     }
+                    */
                 }
-                */
             },
 
             pluginArgs: function() {
